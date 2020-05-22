@@ -1,4 +1,4 @@
-const url = require('./data/urls.js')
+const url = require('./resources/urls.js')
 ENV = process.env.ENV
 
 exports.config = {
