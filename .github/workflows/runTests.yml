@@ -1,0 +1,12 @@
+name: Run tests in container
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: juanpasobral/wdiotestrunner:chrometest
+    steps:
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      run: npx wdio wdio.conf.js
