@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     container: docker://juanpasobral/wdiotestrunner:chrometest
     steps:
+    - name: Change directories
+      run: |
+        cd /__w/wdio-abstracta
+        ls
     - name: Install dependencies
       run: |
         ls
