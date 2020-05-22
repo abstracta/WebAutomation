@@ -8,6 +8,8 @@ jobs:
     container: docker://juanpasobral/wdiotestrunner:chrometest
     steps:
     - name: Install dependencies
+      run: ls
       run: npm install
     - name: Run tests
+      run: ls
       run: npx wdio wdio.conf.js
