@@ -15,4 +15,5 @@ jobs:
     - name: Run tests
       run: |
         ls
+        export ENV=qa
         npx wdio wdio.conf.js
