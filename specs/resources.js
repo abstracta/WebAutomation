@@ -14,8 +14,18 @@ describe('Abstracta US resources page', () => {
     }),
     it('type filters should work properly', () =>{
         let types = ['BROCHURE','CASE-STUDY','EBOOK','INFOGRAPHIC','QUIZZES','WEBINAR','WHITE-PAPER'];
+        
         types.forEach(type => {
-            assert.strictEqual(ResourcesPage.checkTypeFilterWorking(`${type}`), true)    
+            assert.strictEqual(ResourcesPage.checkTypeFilterWorking(`${type}`), true);
+        });
+    }),
+    it('topic filters should work properly', () =>{
+        ResourcesPage.open();
+
+        let topics = ["AGILE-TESTING","CULTURE","MOBILE-TESTING","PERFORMANCE-ENGINEERING","SOFTWARE-TESTING","TEST-AUTOMATION","TOOLS"];
+        
+        topics.forEach(topic => {
+            assert.strictEqual(ResourcesPage.checkTopicFilterWorking(`${topic}`), true);
         });
     })
 })

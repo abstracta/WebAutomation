@@ -21,11 +21,31 @@ const ResourcesPage = Object.create({
     for (let index = 0; index < this.pageQuantity; index++) {
       
       this.cards.forEach(card => {
-          if(! card.getText().includes(`${type}`)) retorno = false;
+          if(! card.getText().includes(`${type}`)) aux = false;
       });
 
       if(ResourcesPage.pageQuantity > index + 1) ResourcesPage.nextPageButton.click();
     
+    }
+
+    return aux;
+  },
+  checkTopicFilterWorking(topic) {
+    let aux = true;
+
+    $('.categories-container').scrollIntoView();
+    let filterButton = $(`//div[contains(@class, "topics-container")]/div[@data-category="${topic}"]`);
+    filterButton.click();
+
+    let cardTopic = topic.replace('-',' ');
+
+    for (let index = 0; index < this.pageQuantity; index++) {
+        
+      this.cards.forEach(card => {
+        if(! card.getText().includes(`${cardTopic}`)) aux = false;
+      })
+        
+      if(ResourcesPage.pageQuantity > index + 1) ResourcesPage.nextPageButton.click();
     }
 
     return aux;
