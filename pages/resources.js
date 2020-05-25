@@ -3,49 +3,62 @@ const ResourcesPage = Object.create({
   * define elements
   */
   title: { get() { return browser.getTitle(); } },
-  pageQuantity: { get() { return $$('//ul[@id="page-list"]/li').length - 2; } },
-  cards: { get() { return $$('.resources-container .resource-container[style=""] .resource'); } },
+  activeTypeFilter:{ get() { return $('.categories-container .category .active'); } },
+  activeTopicFilter:{ get() { return $('.topics-container .topic .active'); } },
+  cards: { get() { return $$('.resources-container .resource-container:not([style*="display: none"]) .resource'); } },
   nextPageButton: { get() { return $('.next-arrow'); } },
   /**
   * define or overwrite page methods
   */
   open() {
-      browser.url(`${browser.options.baseUrl}/insights/resources`);
+    browser.url(`${browser.options.baseUrl}/insights/resources`);
+  },
+  getPageQuantity() {
+    return $$('//ul[@id="page-list"]/li').length;
+  },
+  selectTypeFilter(type) {
+    let filterButton = $(`//div[contains(@class, "categories-container")]/div[@data-type="${type}"]`);
+    filterButton.click();
   },
   checkTypeFilterWorking(type) {
     let aux = true;
-    
-    let filterButton = $(`//div[contains(@class, "categories-container")]/div[@data-type="${type}"]`);
-    filterButton.click();
-    
-    for (let index = 0; index < this.pageQuantity; index++) {
-      
-      this.cards.forEach(card => {
-          if(! card.getText().includes(`${type}`)) aux = false;
+    this.selectTypeFilter(type);
+    //ver si no amerita refactor con el .topic y el .category
+    for (let index = 0; index < this.getPageQuantity(); index++) {
+
+      this.cards.get().forEach(card => {
+          if(! (card.getText().includes(`${type}`.replace('-',' ')))) aux = false;
       });
 
-      if(ResourcesPage.pageQuantity > index + 1) ResourcesPage.nextPageButton.click();
+      if(this.pageQuantity > index + 1) this.nextPageButton.click();
     
     }
 
     return aux;
   },
-  checkTopicFilterWorking(topic) {
-    let aux = true;
-
+  selectTopicFilter(topic) {
     $('.categories-container').scrollIntoView();
     let filterButton = $(`//div[contains(@class, "topics-container")]/div[@data-category="${topic}"]`);
     filterButton.click();
+  },
+  checkTopicFilterWorking(topic) {
+    let aux = true;
+    //esta hay que mirarla de nuevo
+    this.selectTopicFilter(topic);
+    let auxTopic = topic.replace('-',' ');
 
-    let cardTopic = topic.replace('-',' ');
-
-    for (let index = 0; index < this.pageQuantity; index++) {
+    for (let index = 0; index < this.getPageQuantity(); index++) {
         
-      this.cards.forEach(card => {
-        if(! card.getText().includes(`${cardTopic}`)) aux = false;
+      this.cards.get().forEach(card => {
+        if(! (card.getText().includes(`${topic}`))){
+          console.log(topic);
+          console.log(auxTopic);
+          console.log(card.getText());
+          aux = false;
+        } 
       })
         
-      if(ResourcesPage.pageQuantity > index + 1) ResourcesPage.nextPageButton.click();
+      if(this.pageQuantity > index + 1) this.nextPageButton.click();
     }
 
     return aux;
