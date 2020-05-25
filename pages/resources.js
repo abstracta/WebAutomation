@@ -12,8 +12,8 @@ const ResourcesPage = Object.create({
   open() {
       browser.url(`${browser.options.baseUrl}/insights/resources`);
   },
-  checkTypeFilter(type) {
-    let retorno = true;
+  checkTypeFilterWorking(type) {
+    let aux = true;
     
     let filterButton = $(`//div[contains(@class, "categories-container")]/div[@data-type="${type}"]`);
     filterButton.click();
@@ -28,7 +28,7 @@ const ResourcesPage = Object.create({
     
     }
 
-    return retorno;
+    return aux;
   }
 });
 
