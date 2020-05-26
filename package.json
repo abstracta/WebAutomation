@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx wdio wdio.conf.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,22 @@
     "@wdio/mocha-framework": "^6.1.8",
     "@wdio/spec-reporter": "^6.1.12",
     "@wdio/sync": "^6.1.8",
+    "wdio-chromedriver-service": "^6.0.3",
     "chromedriver": "^83.0.0",
-    "wdio-chromedriver-service": "^6.0.3"
-  }
+    "wdio-geckodriver-service": "^1.0.3",
+    "geckodriver": "^1.19.1",
+    "standard": "*"
+  },
+  "dependencies": {
+    "@wdio/selenium-standalone-service": "^6.0.16"
+},
+   "standard": {
+     "globals": [
+       "$",
+       "$$",
+       "browser",
+       "it",
+       "describe"
+     ]
+   }
 }
