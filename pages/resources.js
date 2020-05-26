@@ -43,14 +43,14 @@ const ResourcesPage = Object.create({
   },
   checkTopicFilterWorking(topic) {
     let aux = true;
-    //esta hay que mirarla de nuevo
+    
     this.selectTopicFilter(topic);
     let auxTopic = topic.replace('-',' ');
 
     for (let index = 0; index < this.getPageQuantity(); index++) {
         
       this.cards.get().forEach(card => {
-        if(! (card.getText().includes(`${topic}`))){
+        if(! (card.getText().includes(`${auxTopic}`))){
           console.log(topic);
           console.log(auxTopic);
           console.log(card.getText());

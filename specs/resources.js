@@ -38,11 +38,15 @@ describe('Abstracta US resources page', () => {
     }),
     it('topic filters should work properly', () =>{
         ResourcesPage.open();
-
+        //esta queda fallando por inconsistencia en las tarjetas.
         let topics = ["AGILE-TESTING","CULTURE","MOBILE-TESTING","PERFORMANCE-ENGINEERING","SOFTWARE-TESTING","TEST-AUTOMATION","TOOLS"];
         
         topics.forEach(topic => {
             assert.strictEqual(ResourcesPage.checkTopicFilterWorking(topic), true);
         });
+    }),
+    it('pagination should work properly', () => {
+        ResourcesPage.selectTopicFilter('ALL');
+        assert.strictEqual(ResourcesPage.cards.get().length < 13, true);
     })
 })
