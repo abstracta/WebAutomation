@@ -3,8 +3,8 @@ const ResourcesPage = Object.create({
   * define elements
   */
   title: { get() { return browser.getTitle(); } },
-  activeTypeFilter:{ get() { return $('.categories-container .category .active'); } },
-  activeTopicFilter:{ get() { return $('.topics-container .topic .active'); } },
+  activeTypeFilter: { get() { return $('.categories-container .category .active'); } },
+  activeTopicFilter: { get() { return $('.topics-container .topic .active'); } },
   cards: { get() { return $$('.resources-container .resource-container:not([style*="display: none"]) .resource'); } },
   nextPageButton: { get() { return $('.next-arrow'); } },
   /**
@@ -14,7 +14,7 @@ const ResourcesPage = Object.create({
     browser.url(`${browser.options.baseUrl}/insights/resources`);
   },
   getPageQuantity() {
-    return $$('//ul[@id="page-list"]/li').length;
+    return $$('//ul[@id="page-list"]/li').length - 2;
   },
   selectTypeFilter(type) {
     let filterButton = $(`//div[contains(@class, "categories-container")]/div[@data-type="${type}"]`);
