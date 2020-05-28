@@ -16,7 +16,11 @@ const UtilsWrapper = ({
       //aca capaz mejor un es visible
       while (component.isDisplayedInViewport()) {
          browser.pause(1000);
-         if (closeButton.isClickable()) closeButton.click();
+         if (closeButton.isClickable()){
+           try{
+             closeButton.click();
+           } catch(error) {}
+         }
       }
    },
 
