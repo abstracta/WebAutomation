@@ -28,7 +28,7 @@ const UtilsWrapper = ({
       this.closeComponent('.cc-btn', '.cc-banner')
    },
 
-   waitForModal_waitUntilDisappears() {
+   waitForModal_waitUntilDisappears(mainLogo) {
       const modal = $('#modal-covid');
       modal.waitForDisplayed({timeout:4000});
       const closeModalButton = $('.modal-dialog .close-modal')
@@ -44,9 +44,8 @@ const UtilsWrapper = ({
          return result.value == 'none'
       },{timeout:4000,timeoutMsg:'expected modal to disappear after 4s'});
 
-      $("#home a[href*='#why']").waitForClickable({
-         timeout: 3000
-      })
+      $(mainLogo).waitForClickable({timeout: 3000});
+      // $(mainLogo).moveTo()
    },
 
    assertComponentTextList(selector, expectedList) {
@@ -203,6 +202,10 @@ const UtilsWrapper = ({
          var displayed = await this.isDisplayedInViewport();
          return displayed
       }, 1000, 'expected element to appear in viewport after 1s');
+   },
+
+   assertFail(message) {
+      assert.fail(message)
    }
 
 });

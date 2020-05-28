@@ -25,20 +25,15 @@
     "@wdio/sync": "^6.1.8",
     "wdio-chromedriver-service": "^6.0.3",
     "chromedriver": "^83.0.0",
-    "wdio-geckodriver-service": "^1.0.3",
-    "geckodriver": "^1.19.1",
     "standard": "*"
   },
-  "dependencies": {
-    "@wdio/selenium-standalone-service": "^6.0.16"
-},
-   "standard": {
-     "globals": [
-       "$",
-       "$$",
-       "browser",
-       "it",
-       "describe"
-     ]
-   }
+  "standard": {
+    "globals": [
+      "$",
+      "$$",
+      "browser",
+      "it",
+      "describe"
+    ]
+  }
 }
