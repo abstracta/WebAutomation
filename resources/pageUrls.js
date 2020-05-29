@@ -11,7 +11,7 @@ module.exports = {
       performanceTesting: "/solutions/performance-engineering",
       mobileTesting: "/solutions/mobile-testing",
       accesibilityTesting: "/solutions/accessibility-testing",
-      toolDevelopment: "/solutions/accessibility-testing"
+      toolDevelopment: "/solutions/custom-software-testing-tool-development"
    },
    industries_: "/industries",
    industries:{

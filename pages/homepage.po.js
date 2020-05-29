@@ -3,7 +3,7 @@ const Page = require('./BasePage');
 const HomePage = Object.assign(Object.create(Page),{
 
    //redefine Base PO methods
-   open: function(url=""){ Page.open(url) },
+   // open: Page.open(),
    // siteLocator: Page.siteLocator,
    // timeout: Page.timeout,
    timeoutMsg: Page.timeoutMsg + "HomePage after " + Page.timeout + "ms",
@@ -26,7 +26,7 @@ const HomePage = Object.assign(Object.create(Page),{
       get section() { return $('#solutions')},
       get title() { return $('#solutions h3')},
       get subheader() { return $('#solutions .p-subheader')},
-      get blocks() { return $$('#solutions .block-solutions')}
+      get blocks() { return $$('#solutions .block')}
    },
 
    background: {

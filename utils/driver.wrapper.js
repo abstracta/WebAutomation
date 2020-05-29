@@ -49,11 +49,11 @@ const UtilsWrapper = ({
       },{timeout:4000,timeoutMsg:'expected modal to disappear after 4s'});
 
       $(mainLogo).waitForClickable({timeout: 3000});
-      // $(mainLogo).moveTo()
+      $(mainLogo).moveTo()
    },
 
    assertComponentTextList(selector, expectedList) {
-      const component = $$(selector)
+      const component = this.selectorIsArray(selector);
       let labelList = [];
       component.forEach((item, i) => {
          assert.strictEqual(item.isDisplayed(), true);

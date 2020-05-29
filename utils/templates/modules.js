@@ -35,12 +35,16 @@ exports.checkGenericSection = function(object,params){
       utils.centerView(object.subheader);
       utils.assertDisplayedInViewport(object.subheader);
    }
-   if (object.blocks.length){
-      utils.assertDisplayedInViewportList(object.blocks);
-      utils.assertElementsToBe(object.blocks,params.blocksNum);
+   if (object.blocks){
+      if (object.blocks.length){
+         utils.assertDisplayedInViewportList(object.blocks);
+         utils.assertElementsToBe(object.blocks,params.blocksNum);
+         if (object.blocksTitles)
+            utils.assertComponentTextList(object.blocksTitles,params.blocksTitles);
+      }
+      else
+         utils.assertDisplayedInViewport(object.blocks);
    }
-   else
-      utils.assertDisplayedInViewport(object.blocks);
 }
 
 exports.checkContactUsSection = function(object,params){

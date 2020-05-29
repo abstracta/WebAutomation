@@ -1,5 +1,5 @@
-const ResourcesPage = require('../pages/resources');
-const UtilsWrapper = require('../utils/driver.wrapper');
+const ResourcesPage = require('../../pages/resources');
+const UtilsWrapper = require('../../utils/driver.wrapper');
 const assert = require('assert');
 
 describe('Abstracta US resources page', () => {
@@ -40,7 +40,7 @@ describe('Abstracta US resources page', () => {
         ResourcesPage.open();
         //esta queda fallando por inconsistencia en las tarjetas.
         let topics = ["AGILE-TESTING","CULTURE","MOBILE-TESTING","PERFORMANCE-ENGINEERING","SOFTWARE-TESTING","TEST-AUTOMATION","TOOLS"];
-        
+
         topics.forEach(topic => {
             assert.strictEqual(ResourcesPage.checkTopicFilterWorking(topic), true);
         });

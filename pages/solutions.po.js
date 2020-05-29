@@ -2,7 +2,7 @@ const Home = require('./homepage.po');
 const url = require('../resources/pageUrls').solutions_;
 
 const Solutions = Object.assign(Object.create(Home),{
-   open: Home.open(url),
+   url: url
 })
 
 delete Solutions.home.homeButton;

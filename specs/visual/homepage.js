@@ -1,18 +1,26 @@
-const HomePage = require('../pages/homepage.po');
-const utils = require('../utils/driver.wrapper');
-const modules = require('../utils/templates/modules')
+const HomePage = require('../../pages/homepage.po');
+const utils = require('../../utils/driver.wrapper');
+const modules = require('../../utils/templates/modules')
+// const Oculow = require('oculow')
+// const oculow = new Oculow.Oculow()
 
 describe('Abstracta US: Visual/HomePage', function() {
 
    before(function() {
-     HomePage.open();
-     utils.waitUntilDisplayed(HomePage.siteLocator,{timeout:HomePage.timeout,timeoutMsg:HomePage.timeoutMsg});
+      // oculow.setKeys("SwdxW7voPpOYA53hAVSE+MI6TPvFWS0h", "6sEVMLnp1JnqZ3k5/NmcLi6N+6v+ZPJE")
+      // oculow.setAppId("abstracta-us")
+      // oculow.setBaselineManagement(oculow.ASSISTED)
+      // oculow.setComparisonLogic(oculow.PIXEL_DIFF)
+      HomePage.open();
+      utils.waitUntilDisplayed(HomePage.siteLocator,{timeout:HomePage.timeout,timeoutMsg:HomePage.timeoutMsg});
    });
 
    it('should wait for the COVID19 modal to appear and close it',function(){
       utils.waitForModal_waitUntilDisappears(HomePage.siteLocator)}),
 
    it("should display in viewport 'Home' section with its columns, illustration, correct title, subtitle and botton button text",()=> {
+      // oculow.captureScreen(browser,"homepage")
+      // oculow.dispose()
       modules.checkHomeSection(HomePage.home,{
          homeTitle: 'Enhance your software quality without losing momentum',
          homeSubheader: 'We provide holistic, end-to-end testing solutions that reduce costs & increase efficiency to uphold business continuity',

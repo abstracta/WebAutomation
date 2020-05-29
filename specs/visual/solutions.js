@@ -1,11 +1,11 @@
-const Solutions = require('../pages/solutions.po');
-const modules = require('../utils/templates/modules');
-const utils = require('../utils/driver.wrapper');
+const Solutions = require('../../pages/solutions.po');
+const modules = require('../../utils/templates/modules');
+const utils = require('../../utils/driver.wrapper');
 
 describe('Abstracta US: Visual/Solutions', function() {
 
    before(function() {
-     Solutions.open;
+     Solutions.open();
      utils.waitUntilDisplayed(Solutions.siteLocator,{timeout:Solutions.timeout,timeoutMsg:Solutions.timeoutMsg});
    });
 
