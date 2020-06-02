@@ -2,7 +2,8 @@ const Home = require('./homepage.po');
 const url = require('../resources/pageUrls').solutions_;
 
 const Solutions = Object.assign(Object.create(Home),{
-   url: url
+   url: url,
+   timeoutMsg: Page.timeoutMsg + "Solutions after " + Page.timeout + "ms",
 })
 
 delete Solutions.home.homeButton;

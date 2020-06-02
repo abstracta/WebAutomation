@@ -3,6 +3,7 @@ const url = require('../resources/pageUrls').industries.ecommerce;
 
 const Ecommerce = Object.assign(Object.create(Industries),{
    url: url,
+   timeoutMsg: Page.timeoutMsg + "Industries - Ecommerce after " + Page.timeout + "ms",
 
    logos: {
       get logos() { return $('#logos')},

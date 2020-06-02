@@ -3,6 +3,7 @@ const url = require('../resources/pageUrls').industries_;
 
 const Industries = Object.assign(Object.create(Home),{
    url: url,
+   timeoutMsg: Page.timeoutMsg + "Industries after " + Page.timeout + "ms"
 
    industries: {
       get section() { return $('#industries')},

@@ -60,7 +60,7 @@ exports.config = {
         'goog:chromeOptions': {
             args: [
                 '--no-sandbox',
-                // '--headless',
+                '--headless',
                 '--window-size=1366,720']
         }
         // If outputDir is provided WebdriverIO can capture driver session logs
