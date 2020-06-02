@@ -14,7 +14,8 @@ const Industries = Object.assign(Object.create(Home),{
 delete Industries.home.homeButton;
 delete Industries.solutions;
 Object.defineProperty(Industries.home, 'homeSubheader', {
-  get: function(){ return $('#home h5'); }
+   enumerable: true,
+   get: function(){ return $('#home h5'); }
 });
 
 module.exports = Industries;

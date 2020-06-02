@@ -1,13 +1,19 @@
-const Solutions = require('./solutions.po')
-const url = require('../resources/pageUrls').solutions.softwareTesting
+const Industries = require('./industries.po');
+const url = require('../resources/pageUrls').industries.ecommerce;
 
-const SoftwareTesting = Object.assign(Object.create(Solutions),{
-   url:url,
+const Ecommerce = Object.assign(Object.create(Industries),{
+   url: url,
 
-   solutions: {
-      get section() { return $('#areas') },
-      get title() { return $('#areas h2') },
-      get blocks() { return $$('#areas .block-areas') }
+   logos: {
+      get logos() { return $('#logos')},
+      get images() { return $$('#logos img')}
+   },
+
+   services: {
+      get section() { return $('#services') },
+      get title() { return $('#services h2') },
+      get blocks() { return $$('#services .block-areas') },
+      get blocksTitles() { return $$('#services .block-areas h4') },
    },
 
    whyAbstracta: {
@@ -22,11 +28,6 @@ const SoftwareTesting = Object.assign(Object.create(Solutions),{
       get blocks() { return $$('#tools img') }
    },
 
-   phrase: {
-      get section() { return $('#frase') },
-      get title() { return $('#frase h4') }
-   },
-
    featuredInsights: {
       get section() { return $('#featured-insights') },
       get title() { return $('#featured-insights h2') },
@@ -37,12 +38,14 @@ const SoftwareTesting = Object.assign(Object.create(Solutions),{
       get section() { return $('#what-others-say') },
       get title() { return $('#what-others-say h2') },
       get blocks() { return $('#what-others-say .block-data') }
-   },
+   }
 
 })
-Object.defineProperty(Solutions.home, 'homeIcon', {
+
+delete Ecommerce.industries;
+Object.defineProperty(Ecommerce.home, 'homeIcon', {
    enumerable: true,
    get: function(){ return $('#home .iconSolutions'); }
 });
 
-module.exports = SoftwareTesting;
+module.exports = Ecommerce;

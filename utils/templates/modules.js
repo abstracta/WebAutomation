@@ -19,7 +19,7 @@ exports.checkHomeSection = function(obj,params){
 
 exports.logos_static = function(obj,params) {
    utils.scrollAndAssertSectionInViewPort(obj.logos);
-   utils.assertElementsToBe(obj.logosElems,params.logos);
+   utils.assertElementsToBe(obj.images,params.logos);
 }
 
 exports.logos_slider = function(obj){
@@ -63,6 +63,7 @@ exports.checkContactUsSection = function(object,params){
 
 function checkError(object){
    for (let val of Object.values(object)){
+      // console.log(val);
       if(val.error)
          utils.assertFail(val.error.message)
    }

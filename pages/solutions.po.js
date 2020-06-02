@@ -8,7 +8,8 @@ const Solutions = Object.assign(Object.create(Home),{
 delete Solutions.home.homeButton;
 delete Solutions.solutions.subheader;
 Object.defineProperty(Solutions.home, 'homeSubheader', {
-  get: function(){ return $('#home h5'); }
+   enumerable: true,
+   get: function(){ return $('#home h5'); }
 });
 
 module.exports = Solutions;
