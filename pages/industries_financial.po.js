@@ -3,7 +3,7 @@ const url = require('../resources/pageUrls').industries.financial;
 
 const Financial = Object.assign(Object.create(Industries_Ecommerce),{
    url: url,
-   timeoutMsg: Page.timeoutMsg + "Industries - Financial after " + Page.timeout + "ms"
+   timeoutMsg: Industries_Ecommerce.timeoutMsg + "Industries - Financial after " + Industries_Ecommerce.timeout + "ms"
 
 })
 

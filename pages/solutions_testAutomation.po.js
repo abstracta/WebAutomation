@@ -3,7 +3,7 @@ const url = require('../resources/pageUrls').solutions.testAutomation
 
 const TestAutomation = Object.assign(Object.create(SoftwareTesting),{
    url:url,
-   timeoutMsg: Page.timeoutMsg + "Solutions - Test Automation after " + Page.timeout + "ms",
+   timeoutMsg: SoftwareTesting.timeoutMsg + "Solutions - Test Automation after " + SoftwareTesting.timeout + "ms",
 
    testAutomation: {
       get section() { return $('#our-test') },

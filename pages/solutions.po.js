@@ -3,7 +3,7 @@ const url = require('../resources/pageUrls').solutions_;
 
 const Solutions = Object.assign(Object.create(Home),{
    url: url,
-   timeoutMsg: Page.timeoutMsg + "Solutions after " + Page.timeout + "ms",
+   timeoutMsg: Home.timeoutMsg + "Solutions after " + Home.timeout + "ms"
 })
 
 delete Solutions.home.homeButton;

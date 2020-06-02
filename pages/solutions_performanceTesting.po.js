@@ -3,7 +3,7 @@ const url = require('../resources/pageUrls').solutions.performanceTesting
 
 const PerformanceTesting = Object.assign(Object.create(SoftwareTesting),{
    url:url,
-   timeoutMsg: Page.timeoutMsg + "Solutions - Performance Testing after " + Page.timeout + "ms",
+   timeoutMsg: SoftwareTesting.timeoutMsg + "Solutions - Performance Testing after " + SoftwareTesting.timeout + "ms",
 
    performanceTesting: {
       get section() { return $('#test-system') },

@@ -3,7 +3,7 @@ const url = require('../resources/pageUrls').solutions.mobileTesting
 
 const MobileTesting = Object.assign(Object.create(SoftwareTesting),{
    url:url,
-   timeoutMsg: Page.timeoutMsg + "Solutions - Mobile Testing after " + Page.timeout + "ms",
+   timeoutMsg: SoftwareTesting.timeoutMsg + "Solutions - Mobile Testing after " + SoftwareTesting.timeout + "ms",
 
    apptim: {
       get section() { return $('#monkop') },

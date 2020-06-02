@@ -3,7 +3,7 @@ const url = require('../resources/pageUrls').industries.technology;
 
 const Technology = Object.assign(Object.create(Industries_Ecommerce),{
    url: url,
-   timeoutMsg: Page.timeoutMsg + "Industries - Technology after " + Page.timeout + "ms"
+   timeoutMsg: Industries_Ecommerce.timeoutMsg + "Industries - Technology after " + Industries_Ecommerce.timeout + "ms"
 
 })
 

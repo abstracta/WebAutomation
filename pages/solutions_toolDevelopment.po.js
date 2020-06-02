@@ -3,7 +3,7 @@ const url = require('../resources/pageUrls').solutions.toolDevelopment
 
 const ToolDevelopment = Object.assign(Object.create(SoftwareTesting),{
    url:url,
-   timeoutMsg: Page.timeoutMsg + "Solutions - Tool Development after " + Page.timeout + "ms",
+   timeoutMsg: SoftwareTesting.timeoutMsg + "Solutions - Tool Development after " + SoftwareTesting.timeout + "ms",
 
    solutions: {
       get section() { return $('#core') },

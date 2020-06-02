@@ -3,7 +3,7 @@ const url = require('../resources/pageUrls').solutions.accesibilityTesting
 
 const AccessibilityTesting = Object.assign(Object.create(SoftwareTesting),{
    url:url,
-   timeoutMsg: Page.timeoutMsg + "Solutions - Accessibility Testing after " + Page.timeout + "ms",
+   timeoutMsg: SoftwareTesting.timeoutMsg + "Solutions - Accessibility Testing after " + SoftwareTesting.timeout + "ms",
 
    whyAccessibility: {
       get section() { return $('#why-us') },
