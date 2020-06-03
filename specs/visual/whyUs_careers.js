@@ -20,7 +20,7 @@ describe('Abstracta US: Visual/Why Us - Careers', function() {
    },3),
 
    it("should check the figures just in the right from Home section are displayed", function(){
-      utils.assertDisplayedInViewportList(Careers.figures.icons;
+      utils.assertDisplayedInViewportList(Careers.figures.icons);
    },3),
 
    it("should scroll to and display in viewport 'Why Work With Us' section with the correct title, subtitles, 4 blocks and images",function(){
