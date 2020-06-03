@@ -6,7 +6,10 @@ const Careers = Object.assign(Object.create(Homepage),{
    url: url,
    timeoutMsg: Homepage.timeoutMsg + "Why Us - Careers after " + Homepage.timeout + "ms",
 
-   icons: function() { return $$('#iconOne,#iconTwo,#iconThree,#iconPlanta,.headerIconOne,.headerIconTwo '); },
+   figures: {
+      get icons() { return $$('#iconOne,#iconTwo,#iconThree,#iconPlanta,.headerIconOne,.headerIconTwo '); }
+   },
+   // icons: function() { return $$('#iconOne,#iconTwo,#iconThree,#iconPlanta,.headerIconOne,.headerIconTwo '); },
 
    whyWorkWithUs: {
       get section() { return $('#whyWorkWithUs')},
