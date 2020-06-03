@@ -28,7 +28,7 @@ exports.logos_slider = function(obj){
 }
 
 exports.checkGenericSection = function(object,params){
-   // checkError(object);
+   checkError(object);
    utils.scrollAndAssertSectionInViewPort(object.section);
    if (object.title)
       utils.assertComponentText(object.title,params.title);
@@ -49,7 +49,7 @@ exports.checkGenericSection = function(object,params){
 }
 
 exports.checkContactUsSection = function(object,params){
-   // checkError(object);
+   checkError(object);
    utils.scrollAndAssertSectionInViewPort(object.contactUs);
    utils.assertComponentText(object.contactUsTitle,params.title);
    utils.assertDisplayedInViewport(object.contactUsDescription);
