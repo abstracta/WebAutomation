@@ -1,81 +1,75 @@
-const Page = require('./BasePage');
+const Homepage = require('./homepage.po');
+const url = require('../resources/pageUrls.js').whyUs.careers
 
-const HomePage = Object.assign(Object.create(Page),{
+const Careers = Object.assign(Object.create(Homepage),{
 
-   //redefine Base PO methods
-   // open: Page.open(),
-   // siteLocator: Page.siteLocator,
-   // timeout: Page.timeout,
-   timeoutMsg: Page.timeoutMsg + "Why Us - Careers after " + Page.timeout + "ms",
+   url: url,
+   timeoutMsg: Homepage.timeoutMsg + "Why Us - Careers after " + Homepage.timeout + "ms",
 
-   //elements and flags
-   home: {
-      get main() { { return $('#home'); } },
-      get mainColumns() { { return $$('#home .col-lg-6'); } },
-      get homeTitle() { { return $('#home h1:not(.hidden-lg)'); } },
-      get homeSubtitle() {  { return $('#home .p-home'); } },
-      get homeButton() { return $('#home button'); },
-      get homeIllustration(){ return $('#home .ilustracion')}
+   icons: function() { return $$('#iconOne,#iconTwo,#iconThree,#iconPlanta,.headerIconOne,.headerIconTwo '); },
+
+   whyWorkWithUs: {
+      get section() { return $('#whyWorkWithUs')},
+      get title() { return $('#whyWorkWithUs h2')},
+      get blocks() { return $$('#whyWorkWithUs p')},
+      get blocksTitles() { return $$('#whyWorkWithUs h4') },
+      get images() { return $$('#whyWorkWithUs .col-lg-6 img:not(.hidden-lg)')}
    },
 
-   logos: {
-      get logosSlider() { return $('.section1 .logosSlider:nth-child(1)')}
+   lifeAtAbstracta: {
+      get section() { return $('#life-at-abstracta')},
+      get title() { return $('#life-at-abstracta h2')},
+      get blocks() { return $$('#life-at-abstracta .block-life')}
    },
 
-   solutions: {
-      get section() { return $('#solutions')},
-      get title() { return $('#solutions h3')},
-      get subheader() { return $('#solutions .p-subheader')},
-      get blocks() { return $$('#solutions .block')}
+   weAreAbstracta: {
+      get section() { return $('#we_are_abstracta')},
+      get blocks() { return $('#we_are_abstracta .active.center')}
    },
 
-   background: {
-      get section() { return $('#backgrounds') },
-      get blocks() { return $$('#backgrounds img') },
+   didYouKnow: {
+      get section() { return $('#did-you-know')},
+      get title() { return $('#did-you-know h2')},
+      get blocks() { return $$('#did-you-know .did-data')},
+      get blocksIcon() { return $$('#did-you-know .did-img')},
+      get illustration() { return $('#did-you-know #iconFour')}
    },
 
-   whyAbstracta: {
-      get section() { return $('#why-us') },
-      get title() { return $('#why-us h3') },
-      get blocks() { return $$('#why-us .block-why-us') }
+   currentOpenings: {
+      get section() { return $('#current-openings')},
+      get title() { return $('#current-openings h2')},
+      get blocks() { return $('#current-openings .block-current-openings')},
+      get illustration() { return $('#current-openings #iconCurrentOpening')}
    },
 
-   awards: {
-      get section() { return $('#awards') },
-      get blocks() { return $$('#awards .block-award') },
-   },
-
-   whatOthersSay: {
-      get section() { return $('#our-clients') },
-      get title() { return $('#our-clients h3') },
-      get blocks() { return $('#our-clients #wrap') },
-      get sliderItems() { return $$('#our-clients .slick-track li[aria-describedBy]')}
-   },
-
-   featuredInsights: {
-      get section() { return $('#aux-container.hidden-xs') },
-      get title() { return $('#aux-container.hidden-xs h3') },
-      get blocks() { return $$('#aux-container.hidden-xs .resource') }
-   },
-
-   featuredCaseStudies: {
-      get section() { return $('#aux-container:not(.hidden-xs)') },
-      get title() { return $('#aux-container:not(.hidden-xs) h3') },
-      get blocks() { return $$('#aux-container:not(.hidden-xs) .resource') },
-      get button() { return $('.go-home button') }
-   },
-
-   contactForm: {
-      get contactUs() { return $('#contact-us') },
-      get contactUsTitle() { return $('#contact-us .lets-talk-data > h3') },
-      get contactUsDescription() { return $('#contact-us .lets-talk-data > p') },
-      get contactUsImage() { return $('#contact-us .lets-talk-data > img') },
-      get contactUsForm() { return $('#contact-us .aux_div_form') },
-      get contactUsFormTitle() { return $('#contact-us .aux_div_form h3') },
-      get contactUsFormFields() { return $$('#contact-us .aux_div_form .input-group') },
-      get contactUsFormSubmit() { return $('#contact-us .btn-contact') }
+   roadmap: {
+      get section() { return $('.roadmap')},
+      get title() { return $('.roadmap h2')},
+      get subheader() { return $('.roadmap .p-roadmap')},
+      get blocks() { return $$(".roadmap img:not([style*='none'])")}
    }
 
 })
 
-module.exports = HomePage;
+delete Careers.home.homeButton;
+delete Careers.home.homeIllustration;
+// Object.defineProperty(Solutions.home, 'homeSubheader', {
+//    enumerable: true,
+//    get: function(){ return $('#home h5'); }
+// });
+Object.defineProperties(Careers.home,{
+   "homeSubheader": {
+      enumerable: true,
+      get: function(){ return $('#home h5'); }
+   },
+   "homeSpanish": {
+      enumerable: true,
+      get: function(){ return $('#home #spanish'); }
+   },
+   "homeEnglish": {
+      enumerable: true,
+      get: function(){ return $('#home #english'); }
+   }
+});
+
+module.exports = Careers;

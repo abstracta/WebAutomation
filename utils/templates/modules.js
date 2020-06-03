@@ -4,7 +4,8 @@ exports.checkHomeSection = function(obj,params){
    checkError(obj);
    utils.assertDisplayedInViewport(obj.main);
    utils.assertDisplayedInViewportList(obj.mainColumns,false)
-   utils.assertDisplayedInViewport(obj.homeIllustration)
+   if (obj.homeIllustration)
+      utils.assertDisplayedInViewport(obj.homeIllustration)
    if (obj.homeIcon)
       utils.assertDisplayedInViewport(obj.homeIcon);
    utils.assertComponentText(obj.homeTitle,params.homeTitle);

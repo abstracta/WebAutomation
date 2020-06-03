@@ -14,7 +14,7 @@ const UtilsWrapper = ({
       const closeButton = $(closeButtonSelector);
       const component = $(componentSelector);
       //aca capaz mejor un es visible
-      while (component.isDisplayedInViewport()) {
+      while (component.isDisplayed()) {
          browser.pause(1000);
          if (closeButton.isClickable()){
            try{
