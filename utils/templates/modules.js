@@ -1,7 +1,7 @@
 const utils = require('../driver.wrapper');
 
 exports.checkHomeSection = function(obj,params){
-   // checkError(obj);
+   checkError(obj);
    utils.assertDisplayedInViewport(obj.main);
    utils.assertDisplayedInViewportList(obj.mainColumns,false)
    if (obj.homeIllustration)
@@ -28,7 +28,7 @@ exports.logos_slider = function(obj){
 }
 
 exports.checkGenericSection = function(object,params){
-   // checkError(object);
+   checkError(object);
    utils.scrollAndAssertSectionInViewPort(object.section);
    if (object.title)
       utils.assertComponentText(object.title,params.title);
@@ -49,7 +49,7 @@ exports.checkGenericSection = function(object,params){
 }
 
 exports.checkContactUsSection = function(object,params){
-   // checkError(object);
+   checkError(object);
    utils.scrollAndAssertSectionInViewPort(object.contactUs);
    utils.assertComponentText(object.contactUsTitle,params.title);
    utils.assertDisplayedInViewport(object.contactUsDescription);
