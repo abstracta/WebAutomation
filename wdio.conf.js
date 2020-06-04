@@ -61,6 +61,7 @@ exports.config = {
             args: [
                 '--no-sandbox',
                 '--headless',
+                '--disable-dev-shm-usage',
                 '--window-size=1366,720']
         }
         // If outputDir is provided WebdriverIO can capture driver session logs
